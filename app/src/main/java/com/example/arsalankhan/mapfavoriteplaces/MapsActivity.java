@@ -78,7 +78,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMapLongClickListener(this);
         Intent intent = getIntent();
 
-        if(intent.getIntExtra("indext",-1)==0){
+        if(intent.getIntExtra("index",-1)==0){
 
             locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
             locationListener = new LocationListener() {
@@ -155,6 +155,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapLongClick(LatLng latLng) {
+
+        mMap.clear();
 
         String address ="";
         Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
